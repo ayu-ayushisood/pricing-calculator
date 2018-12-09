@@ -1,0 +1,30 @@
+.main-container .left-side .price-head {
+  border-bottom: 2px solid #ddd; }
+.main-container .left-side .product-box {
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  box-shadow: 5px 5px #ddd; }
+.main-container .right-side {
+  border: 1px solid #979797;
+  height: 30em; }
+  .main-container .right-side input[type=text] {
+    border: none;
+    background-color: none;
+    outline: 0;
+    font-size: 25px;
+    width: 300px;
+    height: 59px; }
+    .main-container .right-side input[type=text]::placeholder {
+      font-size: 25px;
+      color: #bebebe;
+      font-weight: 600; }
+  .main-container .right-side hr {
+    margin-top: 0; }
+  .main-container .right-side .total-price {
+    margin: 8em 0 0 20em; }
+  .main-container .right-side .btns {
+    position: absolute;
+    top: 26em;
+    left: 20em; }
+
+/*# sourceMappingURL=custom.css.map */
