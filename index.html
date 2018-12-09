@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MindScroll</title>
+    <!-- Font awesome CSS CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <!-- Bootstrap css maxcdn link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Bootstrap jquery googleapis link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap js maxcdn link -->      
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    
+
+    <!-- Custom css & js-->
+    <link rel="stylesheet" type="text/css" href="public/css/custom.css">
+    <script type="text/javascript" src="public/js/app.js"></script>
+    <script src="public/js/controllers/mainController.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-container" ng-app="myApp" ng-controller="mainController">
+            <div class="left-side col-lg-7 col-md-7 col-sm-7">
+                <h3>Pricing Calculator</h3>
+                <div class="flex-container">
+                    <h3>Users</h3>
+                    <input type="number" class="form-control" ng-model="users">
+                </div>
+                <div class="flex-container">
+                    <h3>Storage</h3>
+                    <input type="text" class="form-control" ng-model="storage">
+                </div>
+                <div class="col-lg-12 flex-container2" >
+                    <div class="col-lg-6" ng-repeat="product in products" style="border: 1px solid black;">
+                        <div class="action-checkbox">
+                           <input id="{{product}}" type="checkbox" value="{{product}}" ng-checked="selection.indexOf(product) > -1" ng-click="toggleSelection(product)" />
+                           <label for="{{product}}"></label>
+                           {{product.name}}
+                        </div>
+                        <div class="prod-description">
+                            {{product.description}}
+                        </div>
+
+                    </div>
+                    <!-- <div class="col-lg-6 checkbox-container" style="border: 1px solid black;">
+                        <input type="checkbox" ng-checked="model1" ng-model="">Gamification
+                        <h5>Lorem Ipsum Lorem Ipsum Lorem Ipsum</h5>
+                    </div>
+                    <div class="col-lg-6 checkbox-container" style="border: 1px solid black;">
+                        <input type="checkbox" ng-checked="model2">Instructor Led Training
+                        <h5>Lorem Ipsum Lorem Ipsum Lorem Ipsum</h5>
+                    </div>
+                    <div class="col-lg-6 checkbox-container" style="border: 1px solid black;">
+                        <input type="checkbox" ng-checked="model3">Module 3
+                        <h5>Lorem Ipsum Lorem Ipsum Lorem Ipsum</h5>
+                    </div>
+                    <div class="col-lg-6 checkbox-container" style="border: 1px solid black;">
+                        <input type="checkbox" ng-checked="model4">Module 4
+                        <h5>Lorem Ipsum Lorem Ipsum Lorem Ipsum</h5>
+                    </div>
+                    <div class="col-lg-6 checkbox-container" style="border: 1px solid black;">
+                        <input type="checkbox"ng-checked="model5">Module 5
+                        <h5>Lorem Ipsum Lorem Ipsum Lorem Ipsum</h5>
+                    </div>
+                    <div class="col-lg-6 checkbox-container" style="border: 1px solid black;">
+                        <input type="checkbox" ng-checked="model6">Module 6
+                        <h5>Lorem Ipsum Lorem Ipsum Lorem Ipsum</h5>
+                    </div> -->
+                </div>
+            </div>
+            <div class="right-side col-lg-5 col-md-5 col-sm-5">
+                <textarea placeholder="Bill to"></textarea>  
+                <div class="bill-container">
+                    <div class="col-lg-12 details">
+                        <div class="col-lg-6">
+                            <h5>Users @ {{users}}*5$</h5>
+                        </div>
+                        <div class="col-lg-6">
+                            {{users*5 | currency}}
+                        </div>
+                    </div>
+                    <div class="col-lg-12 details">
+                        <div ng-repeat="product in selection" class="selected-item">
+                          <div class="col-lg-6">
+                            {{product.name}}
+                          </div>
+                          <div class="col-lg-6">
+                             {{product.price | currency}} 
+                          </div>
+                        </div>
+                    </div>
+                    <div class="total-price">
+                        <span><h2>{{total}}</h2></span>
+                        per annum
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</body>
+</html>
