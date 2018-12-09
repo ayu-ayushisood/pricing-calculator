@@ -1,17 +1,27 @@
 .main-container{
+    padding-top: 5em;
 	.left-side{
 		.price-head{
 			border-bottom: 2px solid #ddd;
 		}
-		.product-box{
-			border:1px solid #ddd;
-			box-sizing:border-box;
-			box-shadow: 5px 5px #ddd;
-		}
+        .product-box-cont{
+            margin-top: 1em;
+            .product-box{
+                border:1px solid #ddd;
+                box-sizing:border-box;
+                box-shadow: 2px 2px #ddd;
+                margin: 8px 10px;
+                span{
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+        }
+    		
 	}
 	.right-side{
 		border: 1px solid #979797;
-		height: 30em;
+		height: 34em;
 		input[type=text] {
             border: none;
             background-color: none;
@@ -29,12 +39,12 @@
         	margin-top: 0;
         }
         .total-price{
-        	margin: 8em 0 0 20em;
+        	// margin: 8em 0 0 20em;
         }
         .btns{
         	position: absolute;
-		    top: 26em;
-		    left: 20em;
+		    top: 30em;
+		    // left: 20em;
         }
 	}
 }
